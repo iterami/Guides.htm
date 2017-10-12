@@ -9,7 +9,10 @@ Unofficial guides for:
 * EVE Online
 * Hearthstone
 * Hitman
+* Mafia
+* Minecraft
 * Planescape: Torment
+* Prey
 * RuneScape
 * StarCraft
 * Team Fortress 2
