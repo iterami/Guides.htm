@@ -5,10 +5,10 @@ function repo_init(){
       'title': 'Guides.htm',
     });
 
-    window.setInterval(
-      update_time,
-      500
-    );
+    core_interval_modify({
+      'interval': 1000,
+      'todo': update_time,
+    });
 }
 
 function update_time(){
