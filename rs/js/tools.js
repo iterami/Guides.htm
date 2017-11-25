@@ -250,7 +250,7 @@ function repo_init(){
 }
 
 function update_time(){
-    var now = time_timestamp_to_date();
+    var now = core_timestamp_to_date();
     var seconds = 86400 - (
       now['hour'] * 3600
       + now['minute'] * 60
@@ -261,13 +261,13 @@ function update_time(){
     var minutes = parseInt(seconds / 60, 10) % 60;
     seconds = seconds % 60;
 
-    document.getElementById('time').innerHTML = time_two_digits({
+    document.getElementById('time').innerHTML = core_two_digits({
       'number': hours,
     }) + ':'
-    + time_two_digits({
+    + core_two_digits({
       'number': minutes,
     }) + ':'
-    + time_two_digits({
+    + core_two_digits({
       'number': seconds,
     });
 }
