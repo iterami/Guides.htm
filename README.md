@@ -16,6 +16,7 @@ Unofficial guides for:
 * Prey
 * RuneScape
 * StarCraft
+* Stronghold
 * Team Fortress 2
 * World of Warcraft
 
