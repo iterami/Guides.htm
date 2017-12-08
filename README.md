@@ -11,6 +11,7 @@ Unofficial guides for:
 * Hitman
 * Mafia
 * Minecraft
+* Paper Mario
 * Planescape: Torment
 * Prey
 * RuneScape
