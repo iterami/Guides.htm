@@ -18,6 +18,7 @@ Unofficial guides for:
 * StarCraft
 * Stronghold
 * Team Fortress 2
+* Terraria
 * World of Warcraft
 
 ---
