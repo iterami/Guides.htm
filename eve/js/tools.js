@@ -8,6 +8,14 @@ function calculate_alignment(){
       (Math.log(2) * inertia * mass) / 500000;
 }
 
+function calculate_efficiency(){
+    var lost = Number(document.getElementById('efficiency-lost').value);
+    var total = lost + Number(document.getElementById('efficiency-destroyed').value);
+
+    document.getElementById('efficiency-result').innerHTML =
+      (1 - (lost  / total)) * 100;
+}
+
 function calculate_skillpoints(){
     var level = Number(document.getElementById('skill-level').value);
     var rank = Number(document.getElementById('skill-rank').value);
@@ -44,12 +52,15 @@ function repo_init(){
     });
 
     calculate_alignment();
+    calculate_efficiency();
     calculate_skillpoints();
     calculate_target();
     calculate_year();
 
     document.getElementById('alignment-inertia').oninput =
       document.getElementById('alignment-mass').oninput = calculate_alignment;
+    document.getElementById('efficiency-destroyed').oninput =
+      document.getElementById('efficiency-lost').oninput = calculate_efficiency;
     document.getElementById('current-year').oninput = calculate_year;
     document.getElementById('skill-level').oninput =
       document.getElementById('skill-rank').oninput = calculate_skillpoints;
