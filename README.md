@@ -10,6 +10,7 @@ Unofficial guides for:
 * Hearthstone
 * Hitman
 * Mafia
+* Mario Party
 * Minecraft
 * Paper Mario
 * Planescape: Torment
