@@ -7,6 +7,7 @@ Unofficial guides for:
 * Diablo 2: Lord of Destruction
 * Dungeon Siege
 * EVE Online
+* GitHub
 * Hearthstone
 * Hitman
 * Mafia
