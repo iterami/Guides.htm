@@ -42,6 +42,23 @@ function calculate_year(){
     document.getElementById('yc-year').innerHTML = year - 1898;
 }
 
+function calculate_war(){
+    var members = Number(document.getElementById('war-members').value);
+
+    var cost = Math.pow(
+      (Math.log(members) / Math.log(1.675)),
+      2
+    ) * 300000 * Math.pow(
+      members,
+      0.26815
+    );
+    if(cost < 50000000){
+        cost = 50000000;
+    }
+
+    document.getElementById('war-result').innerHTML = cost;
+}
+
 function repo_init(){
     core_repo_init({
       'title': 'Guides.htm',
@@ -52,6 +69,7 @@ function repo_init(){
     calculate_skillpoints();
     calculate_target();
     calculate_year();
+    calculate_war();
 
     document.getElementById('alignment-inertia').oninput =
       document.getElementById('alignment-mass').oninput = calculate_alignment;
@@ -62,4 +80,5 @@ function repo_init(){
       document.getElementById('skill-rank').oninput = calculate_skillpoints;
     document.getElementById('target-scan').oninput =
       document.getElementById('target-sig').oninput = calculate_target;
+    document.getElementById('war-members').oninput = calculate_war;
 };
