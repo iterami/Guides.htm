@@ -25,7 +25,7 @@ function calculate_target(){
     var scan = Number(document.getElementById('target-scan').value);
     var sig = Number(document.getElementById('target-sig').value);
 
-    document.getElementById('target-result').innerHTML = 40000 / (scan * Math.pow(Math.sin(sig), 2));
+    document.getElementById('target-result').innerHTML = (40000 / scan ) / Math.pow(Math.asinh(sig), 2);
 }
 
 function calculate_year(){
