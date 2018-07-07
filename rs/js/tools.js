@@ -15,7 +15,7 @@ function calculate_combat(){
     for(var id in skills){
         var value = document.getElementById(id).value;
 
-        if(!isNaN(value)
+        if(!Number.isNaN(value)
           && value.length >= 1
           && value >= 1){
             skills[id] = parseInt(

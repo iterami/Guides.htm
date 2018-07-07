@@ -33,7 +33,7 @@ function calculate_year(){
       document.getElementById('current-year').value,
       10
     );
-    if(isNaN(year)){
+    if(Number.isNaN(year)){
         year = new Date().getFullYear();
     }
 
