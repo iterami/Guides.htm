@@ -18,7 +18,7 @@ function calculate_combat(){
         if(!Number.isNaN(value)
           && value.length >= 1
           && value >= 1){
-            skills[id] = parseInt(
+            skills[id] = Number.parseInt(
               value,
               10
             );
@@ -52,11 +52,11 @@ function calculate_combat(){
 }
 
 function calculate_xp(){
-    var first = parseInt(
+    var first = Number.parseInt(
       document.getElementById('first').value,
       10
     );
-    var second = parseInt(
+    var second = Number.parseInt(
       document.getElementById('second').value,
       10
     );
@@ -257,8 +257,8 @@ function update_time(){
       + now['second']
     );
 
-    var hours = parseInt(seconds / 3600, 10) % 24;
-    var minutes = parseInt(seconds / 60, 10) % 60;
+    var hours = Number.parseInt(seconds / 3600, 10) % 24;
+    var minutes = Number.parseInt(seconds / 60, 10) % 60;
     seconds = seconds % 60;
 
     document.getElementById('time').innerHTML = core_two_digits({

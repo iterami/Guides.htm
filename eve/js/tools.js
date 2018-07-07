@@ -29,7 +29,7 @@ function calculate_target(){
 }
 
 function calculate_year(){
-    var year = parseInt(
+    var year = Number.parseInt(
       document.getElementById('current-year').value,
       10
     );

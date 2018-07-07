@@ -31,13 +31,13 @@ function update_time(){
         var seconds = regions[region] - week_seconds;
         document.getElementById(region).innerHTML =
           core_two_digits({
-            'number': parseInt(seconds / 86400, 10) % 7,
+            'number': Number.parseInt(seconds / 86400, 10) % 7,
           }) + ':'
           + core_two_digits({
-            'number': parseInt(seconds / 3600, 10) % 24,
+            'number': Number.parseInt(seconds / 3600, 10) % 24,
           }) + ':'
           + core_two_digits({
-            'number': parseInt(seconds / 60, 10) % 60,
+            'number': Number.parseInt(seconds / 60, 10) % 60,
           }) + ':'
           + core_two_digits({
             'number': seconds % 60,
