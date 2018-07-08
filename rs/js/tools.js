@@ -2,7 +2,7 @@
 
 function calculate_combat(){
     // Verify skills and store their values.
-    var skills = {
+    let skills = {
       'attack': 1,
       'constitution': 10,
       'defense': 1,
@@ -12,8 +12,8 @@ function calculate_combat(){
       'strength': 1,
       'summoning': 1,
     };
-    for(var id in skills){
-        var value = document.getElementById(id).value;
+    for(let id in skills){
+        let value = document.getElementById(id).value;
 
         if(!Number.isNaN(value)
           && value.length >= 1
@@ -52,11 +52,11 @@ function calculate_combat(){
 }
 
 function calculate_xp(){
-    var first = Number.parseInt(
+    let first = Number.parseInt(
       document.getElementById('first').value,
       10
     );
-    var second = Number.parseInt(
+    let second = Number.parseInt(
       document.getElementById('second').value,
       10
     );
@@ -66,7 +66,7 @@ function calculate_xp(){
         return;
     }
 
-    var xp = [
+    let xp = [
       0,
       83,
       174,
@@ -210,7 +210,7 @@ function repo_init(){
       'title': 'Guides.htm',
     });
 
-    var ids = [
+    let ids = [
       'attack',
       'constitution',
       'defense',
@@ -220,21 +220,21 @@ function repo_init(){
       'strength',
       'summoning',
     ];
-    for(var id in ids){
+    for(let id in ids){
         document.getElementById(ids[id]).oninput = calculate_combat;
     }
 
     document.getElementById('first').onchange = calculate_xp;
     document.getElementById('second').onchange = calculate_xp;
 
-    var select_options = '';
-    for(var i = 1; i <= 120; i++){
+    let select_options = '';
+    for(let i = 1; i <= 120; i++){
         select_options += '<option value=' + i + '>' + i + '</option>';
     }
     document.getElementById('first').innerHTML = select_options;
 
     select_options = '';
-    for(var i = 2; i <= 120; i++){
+    for(let i = 2; i <= 120; i++){
         select_options += '<option value=' + i + '>' + i + '</option>';
     }
     select_options += '<option value=121>Max</option>';
@@ -250,15 +250,15 @@ function repo_init(){
 }
 
 function update_time(){
-    var now = core_timestamp_to_date();
-    var seconds = 86400 - (
+    let now = core_timestamp_to_date();
+    let seconds = 86400 - (
       now['hour'] * 3600
       + now['minute'] * 60
       + now['second']
     );
 
-    var hours = Number.parseInt(seconds / 3600, 10) % 24;
-    var minutes = Number.parseInt(seconds / 60, 10) % 60;
+    let hours = Number.parseInt(seconds / 3600, 10) % 24;
+    let minutes = Number.parseInt(seconds / 60, 10) % 60;
     seconds = seconds % 60;
 
     document.getElementById('time').innerHTML = core_two_digits({

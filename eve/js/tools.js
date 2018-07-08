@@ -1,35 +1,35 @@
 'use strict';
 
 function calculate_alignment(){
-    var inertia = Number(document.getElementById('alignment-inertia').value);
-    var mass = Number(document.getElementById('alignment-mass').value);
+    let inertia = Number(document.getElementById('alignment-inertia').value);
+    let mass = Number(document.getElementById('alignment-mass').value);
 
     document.getElementById('alignment-result').innerHTML = (Math.log(2) * inertia * mass) / 500000;
 }
 
 function calculate_efficiency(){
-    var lost = Number(document.getElementById('efficiency-lost').value);
-    var total = lost + Number(document.getElementById('efficiency-destroyed').value);
+    let lost = Number(document.getElementById('efficiency-lost').value);
+    let total = lost + Number(document.getElementById('efficiency-destroyed').value);
 
     document.getElementById('efficiency-result').innerHTML = (1 - (lost  / total)) * 100;
 }
 
 function calculate_skillpoints(){
-    var level = Number(document.getElementById('skill-level').value);
-    var rank = Number(document.getElementById('skill-rank').value);
+    let level = Number(document.getElementById('skill-level').value);
+    let rank = Number(document.getElementById('skill-rank').value);
 
     document.getElementById('skill-result').innerHTML = Math.floor(Math.pow(2, 2.5 * (level - 1)) * rank * 250);
 }
 
 function calculate_target(){
-    var scan = Number(document.getElementById('target-scan').value);
-    var sig = Number(document.getElementById('target-sig').value);
+    let scan = Number(document.getElementById('target-scan').value);
+    let sig = Number(document.getElementById('target-sig').value);
 
     document.getElementById('target-result').innerHTML = (40000 / scan ) / Math.pow(Math.asinh(sig), 2);
 }
 
 function calculate_year(){
-    var year = Number.parseInt(
+    let year = Number.parseInt(
       document.getElementById('current-year').value,
       10
     );
@@ -43,9 +43,9 @@ function calculate_year(){
 }
 
 function calculate_war(){
-    var members = Number(document.getElementById('war-members').value);
+    let members = Number(document.getElementById('war-members').value);
 
-    var cost = Math.pow(
+    let cost = Math.pow(
       (Math.log(members) / Math.log(1.675)),
       2
     ) * 300000 * Math.pow(

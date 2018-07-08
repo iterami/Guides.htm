@@ -1,11 +1,11 @@
 'use strict';
 
 function calculate(){
-    var first = Number.parseInt(
+    let first = Number.parseInt(
       document.getElementById('first').value,
       10
     );
-    var second = Number.parseInt(
+    let second = Number.parseInt(
       document.getElementById('second').value,
       10
     );
@@ -15,7 +15,7 @@ function calculate(){
         return;
     }
 
-    var result = '';
+    let result = '';
 
     if(second < 22){
         result =
