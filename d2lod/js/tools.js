@@ -43,7 +43,9 @@ function calculate(){
           );
     }
 
-    result = new Intl.NumberFormat().format(result);
+    result = core_number_format({
+      'number': result,
+    });
 
     if(second > 10){
         result +=

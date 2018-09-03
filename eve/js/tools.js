@@ -4,7 +4,9 @@ function calculate_alignment(){
     let inertia = Number(document.getElementById('alignment-inertia').value);
     let mass = Number(document.getElementById('alignment-mass').value);
 
-    document.getElementById('alignment-result').innerHTML = (Math.log(2) * inertia * mass) / 500000;
+    document.getElementById('alignment-result').innerHTML = core_number_format({
+      'number': (Math.log(2) * inertia * mass) / 500000,
+    });
 }
 
 function calculate_efficiency(){
@@ -18,7 +20,9 @@ function calculate_skillpoints(){
     let level = Number(document.getElementById('skill-level').value);
     let rank = Number(document.getElementById('skill-rank').value);
 
-    document.getElementById('skill-result').innerHTML = Math.floor(Math.pow(2, 2.5 * (level - 1)) * rank * 250);
+    document.getElementById('skill-result').innerHTML = core_number_format({
+      'number': Math.floor(Math.pow(2, 2.5 * (level - 1)) * rank * 250),
+    });
 }
 
 function calculate_target(){
@@ -38,8 +42,12 @@ function calculate_year(){
     }
 
     document.getElementById('current-year').value = year;
-    document.getElementById('eve-year').innerHTML = year + 21338;
-    document.getElementById('yc-year').innerHTML = year - 1898;
+    document.getElementById('eve-year').innerHTML = core_number_format({
+      'number': year + 21338,
+    });
+    document.getElementById('yc-year').innerHTML = core_number_format({
+      'number': year - 1898,
+    });
 }
 
 function calculate_war(){
@@ -56,7 +64,9 @@ function calculate_war(){
         cost = 50000000;
     }
 
-    document.getElementById('war-result').innerHTML = cost;
+    document.getElementById('war-result').innerHTML = core_number_format({
+      'number': cost,
+    });
 }
 
 function repo_init(){
