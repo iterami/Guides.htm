@@ -29,7 +29,9 @@ function calculate_target(){
     let scan = Number(document.getElementById('target-scan').value);
     let sig = Number(document.getElementById('target-sig').value);
 
-    document.getElementById('target-result').innerHTML = (40000 / scan ) / Math.pow(Math.asinh(sig), 2);
+    document.getElementById('target-result').innerHTML = core_number_format({
+      'number': (40000 / scan ) / Math.pow(Math.asinh(sig), 2),
+    });
 }
 
 function calculate_year(){
