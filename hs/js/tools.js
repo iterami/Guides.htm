@@ -6,6 +6,7 @@ function repo_init(){
     });
 
     core_interval_modify({
+      'id': 'second',
       'interval': 1000,
       'todo': update_time,
     });
