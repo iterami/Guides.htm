@@ -244,6 +244,7 @@ function repo_init(){
     calculate_xp();
 
     core_interval_modify({
+      'id': 'second',
       'interval': 1000,
       'todo': update_time,
     });
