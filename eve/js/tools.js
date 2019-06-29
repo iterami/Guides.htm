@@ -16,6 +16,16 @@ function calculate_efficiency(){
     document.getElementById('efficiency-result').innerHTML = (1 - (lost  / total)) * 100;
 }
 
+function calculate_material(){
+    let base = Number(document.getElementById('material-input').value);
+
+    for(let i = 1; i < 11; i++){
+        document.getElementById('material-' + i).innerHTML = core_number_format({
+          'number': Math.ceil(base * ((100 - i) / 100)),
+        });
+    }
+}
+
 function calculate_skillpoints(){
     let level = Number(document.getElementById('skill-level').value);
     let rank = Number(document.getElementById('skill-rank').value);
@@ -88,6 +98,7 @@ function repo_init(){
     document.getElementById('efficiency-destroyed').oninput =
       document.getElementById('efficiency-lost').oninput = calculate_efficiency;
     document.getElementById('current-year').oninput = calculate_year;
+    document.getElementById('material-input').oninput = calculate_material;
     document.getElementById('skill-level').oninput =
       document.getElementById('skill-rank').oninput = calculate_skillpoints;
     document.getElementById('target-scan').oninput =
