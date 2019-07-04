@@ -14,11 +14,11 @@ function repo_init(){
 
 function update_time(){
     let regions = {
-      'a-end': 126000,
+      'a-end': 313200,
       'a-start': 316800,
-      'ac-end': 79200,
+      'ac-end': 327600,
       'ac-start': 331200,
-      'e-end': 104400,
+      'e-end': 327600,
       'e-start': 331200,
     };
     let date = core_timestamp_to_date();
