@@ -31,16 +31,16 @@ function update_time(){
 
         let seconds = regions[region] - week_seconds;
         document.getElementById(region).innerHTML =
-          core_two_digits({
+          core_digits_min({
             'number': Number.parseInt(seconds / 86400, 10) % 7,
           }) + ':'
-          + core_two_digits({
+          + core_digits_min({
             'number': Number.parseInt(seconds / 3600, 10) % 24,
           }) + ':'
-          + core_two_digits({
+          + core_digits_min({
             'number': Number.parseInt(seconds / 60, 10) % 60,
           }) + ':'
-          + core_two_digits({
+          + core_digits_min({
             'number': seconds % 60,
           });
     }

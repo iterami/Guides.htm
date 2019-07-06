@@ -262,13 +262,13 @@ function update_time(){
     let minutes = Number.parseInt(seconds / 60, 10) % 60;
     seconds = seconds % 60;
 
-    document.getElementById('time').innerHTML = core_two_digits({
+    document.getElementById('time').innerHTML = core_digits_min({
       'number': hours,
     }) + ':'
-    + core_two_digits({
+    + core_digits_min({
       'number': minutes,
     }) + ':'
-    + core_two_digits({
+    + core_digits_min({
       'number': seconds,
     });
 }
