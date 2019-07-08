@@ -20,9 +20,49 @@ function calculate_material(){
     let base = Number(document.getElementById('material-input').value);
 
     for(let i = 1; i < 11; i++){
-        document.getElementById('material-' + i).innerHTML = core_number_format({
-          'number': Math.ceil(base * ((100 - i) / 100)),
+        let discounted = core_round({
+          'number': base * ((100 - i) / 100),
         });
+        let fraction = core_round({
+          'number': discounted % 1,
+        });
+        let power = Math.pow(
+          10,
+          String(fraction).length - 2
+        );
+
+        fraction *= power;
+
+        document.getElementById('material-' + i).innerHTML = core_number_format({
+          'number': Math.ceil(discounted),
+        });
+
+        if(fraction !== 0){
+
+            let done = false;
+
+            while(!done){
+                let result = core_round({
+                  'number': greatest_common_divisor(
+                    fraction,
+                    power
+                  ),
+                });
+
+                if(result > 1){
+                    fraction /= result;
+                    power /= result;
+
+                }else{
+                    done = true;
+                }
+            }
+
+        }else{
+            power = 1;
+        }
+
+        document.getElementById('runs-' + i).innerHTML = power;
     }
 }
 
@@ -79,6 +119,20 @@ function calculate_war(){
     document.getElementById('war-result').innerHTML = core_number_format({
       'number': cost,
     });
+}
+
+function greatest_common_divisor(small, big){
+    if(big === 0){
+        return small;
+    }
+    if(small === 0){
+        return big;
+    }
+
+    return greatest_common_divisor(
+      big,
+      small % big
+    );
 }
 
 function repo_init(){
