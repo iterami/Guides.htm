@@ -43,10 +43,10 @@ function calculate_material(){
 
             while(!done){
                 let result = core_round({
-                  'number': greatest_common_divisor(
-                    fraction,
-                    power
-                  ),
+                  'number': core_greatest_common_divisor({
+                    'a': fraction,
+                    'b': power,
+                  }),
                 });
 
                 if(result > 1){
@@ -119,20 +119,6 @@ function calculate_war(){
     document.getElementById('war-result').innerHTML = core_number_format({
       'number': cost,
     });
-}
-
-function greatest_common_divisor(small, big){
-    if(big === 0){
-        return small;
-    }
-    if(small === 0){
-        return big;
-    }
-
-    return greatest_common_divisor(
-      big,
-      small % big
-    );
 }
 
 function repo_init(){
