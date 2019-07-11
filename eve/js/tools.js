@@ -23,35 +23,34 @@ function calculate_material(){
         let discounted = core_round({
           'number': base * ((100 - i) / 100),
         });
-        let fraction = core_round({
+        let numerator = core_round({
           'number': discounted % 1,
         });
-        let power = Math.pow(
+        let denominator = Math.pow(
           10,
-          String(fraction).length - 2
+          String(numerator).length - 2
         );
 
-        fraction *= power;
+        numerator *= denominator;
 
         document.getElementById('material-' + i).innerHTML = core_number_format({
           'number': Math.ceil(discounted),
         });
 
-        if(fraction !== 0){
-
+        if(numerator !== 0){
             let done = false;
 
             while(!done){
                 let result = core_round({
                   'number': core_greatest_common_divisor({
-                    'a': fraction,
-                    'b': power,
+                    'a': numerator,
+                    'b': denominator,
                   }),
                 });
 
                 if(result > 1){
-                    fraction /= result;
-                    power /= result;
+                    numerator /= result;
+                    denominator /= result;
 
                 }else{
                     done = true;
@@ -59,10 +58,10 @@ function calculate_material(){
             }
 
         }else{
-            power = 1;
+            denominator = 1;
         }
 
-        document.getElementById('runs-' + i).innerHTML = power;
+        document.getElementById('runs-' + i).innerHTML = denominator;
     }
 }
 
