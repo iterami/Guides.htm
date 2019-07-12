@@ -16,6 +16,31 @@ function calculate_efficiency(){
     document.getElementById('efficiency-result').innerHTML = (1 - (lost  / total)) * 100;
 }
 
+function calculate_ehp(){
+    let hp = Number(document.getElementById('hp').value);
+    if(hp <= 1){
+        hp = 1;
+    }
+
+    let resists = [
+      'em',
+      'explosive',
+      'kinetic',
+      'thermal',
+    ];
+    for(let type in resists){
+        let resistance = core_clamp({
+          'max': 0.9999999,
+          'min': 0,
+          'value': Number(document.getElementById('resist-' + resists[type]).value),
+        });
+
+        document.getElementById('ehp-' + resists[type]).innerHTML = core_round({
+          'number': hp / (1 - resistance),
+        });
+    }
+}
+
 function calculate_material(){
     let base = Number(document.getElementById('material-input').value);
 
@@ -137,6 +162,11 @@ function repo_init(){
     document.getElementById('efficiency-destroyed').oninput =
       document.getElementById('efficiency-lost').oninput = calculate_efficiency;
     document.getElementById('current-year').oninput = calculate_year;
+    document.getElementById('hp').oninput =
+      document.getElementById('resist-em').oninput =
+      document.getElementById('resist-explosive').oninput =
+      document.getElementById('resist-kinetic').oninput =
+      document.getElementById('resist-thermal').oninput = calculate_ehp;
     document.getElementById('material-input').oninput = calculate_material;
     document.getElementById('skill-level').oninput =
       document.getElementById('skill-rank').oninput = calculate_skillpoints;
