@@ -17,10 +17,15 @@ function calculate_efficiency(){
 }
 
 function calculate_ehp(){
-    let hp = Number(document.getElementById('hp').value);
-    if(hp <= 1){
-        hp = 1;
-    }
+    let hp = {
+      'armor': Number(document.getElementById('armor-hp').value),
+      'shield': Number(document.getElementById('shield-hp').value),
+      'structure': Number(document.getElementById('structure-hp').value),
+    };
+
+    document.getElementById('total-hp').innerHTML = core_number_format({
+      'number': hp['armor'] + hp['shield'] + hp['structure'],
+    });
 
     let resists = [
       'em',
@@ -29,14 +34,25 @@ function calculate_ehp(){
       'thermal',
     ];
     for(let type in resists){
-        let resistance = core_clamp({
-          'max': 0.9999999,
-          'min': 0,
-          'value': Number(document.getElementById('resist-' + resists[type]).value),
-        });
+        let ehp = 0;
 
-        document.getElementById('ehp-' + resists[type]).innerHTML = core_round({
-          'number': hp / (1 - resistance),
+        let hp_types = [
+          'armor',
+          'shield',
+          'structure',
+        ];
+        for(let hp_type in hp_types){
+            let resistance = core_clamp({
+              'max': 0.99,
+              'min': 0,
+              'value': Number(document.getElementById(hp_types[hp_type] + '-' + resists[type]).value),
+            });
+
+            ehp += hp[hp_types[hp_type]] / (1 - resistance);
+        }
+
+        document.getElementById('total-' + resists[type]).innerHTML = core_round({
+          'number': ehp,
         });
     }
 }
@@ -162,11 +178,21 @@ function repo_init(){
     document.getElementById('efficiency-destroyed').oninput =
       document.getElementById('efficiency-lost').oninput = calculate_efficiency;
     document.getElementById('current-year').oninput = calculate_year;
-    document.getElementById('hp').oninput =
-      document.getElementById('resist-em').oninput =
-      document.getElementById('resist-explosive').oninput =
-      document.getElementById('resist-kinetic').oninput =
-      document.getElementById('resist-thermal').oninput = calculate_ehp;
+    document.getElementById('armor-hp').oninput =
+      document.getElementById('armor-em').oninput =
+      document.getElementById('armor-explosive').oninput =
+      document.getElementById('armor-kinetic').oninput =
+      document.getElementById('armor-thermal').oninput =
+      document.getElementById('shield-hp').oninput =
+      document.getElementById('shield-em').oninput =
+      document.getElementById('shield-explosive').oninput =
+      document.getElementById('shield-kinetic').oninput =
+      document.getElementById('shield-thermal').oninput =
+      document.getElementById('structure-hp').oninput =
+      document.getElementById('structure-em').oninput =
+      document.getElementById('structure-explosive').oninput =
+      document.getElementById('structure-kinetic').oninput =
+      document.getElementById('structure-thermal').oninput = calculate_ehp;
     document.getElementById('material-input').oninput = calculate_material;
     document.getElementById('skill-level').oninput =
       document.getElementById('skill-rank').oninput = calculate_skillpoints;
