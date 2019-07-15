@@ -79,24 +79,12 @@ function calculate_material(){
         });
 
         if(numerator !== 0){
-            let done = false;
+            let reduction = core_fraction_reduce({
+              'denominator': denominator,
+              'numerator': numerator,
+            });
 
-            while(!done){
-                let result = core_round({
-                  'number': core_greatest_common_divisor({
-                    'a': numerator,
-                    'b': denominator,
-                  }),
-                });
-
-                if(result > 1){
-                    numerator /= result;
-                    denominator /= result;
-
-                }else{
-                    done = true;
-                }
-            }
+            denominator = reduction['denominator'];
 
         }else{
             denominator = 1;
