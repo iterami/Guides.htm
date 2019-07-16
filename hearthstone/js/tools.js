@@ -21,7 +21,7 @@ function update_time(){
       'e-end': 327600,
       'e-start': 331200,
     };
-    let date = core_timestamp_to_date();
+    let date = timestamp_to_date();
     let week_seconds = date['day'] * 86400 + date['hour'] * 3600 + date['minute'] * 60 + date['second'];
 
     for(let region in regions){
@@ -31,17 +31,15 @@ function update_time(){
 
         let seconds = regions[region] - week_seconds;
         document.getElementById(region).innerHTML =
-          core_digits_min({
-            'number': Number.parseInt(seconds / 86400, 10) % 7,
-          }) + ':'
+          Number.parseInt(seconds / 86400, 10) % 7 + 'd '
           + core_digits_min({
             'number': Number.parseInt(seconds / 3600, 10) % 24,
-          }) + ':'
+          }) + 'h '
           + core_digits_min({
             'number': Number.parseInt(seconds / 60, 10) % 60,
-          }) + ':'
+          }) + 'm '
           + core_digits_min({
             'number': seconds % 60,
-          });
+          }) + 's';
     }
 }

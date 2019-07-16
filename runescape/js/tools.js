@@ -251,7 +251,7 @@ function repo_init(){
 }
 
 function update_time(){
-    let now = core_timestamp_to_date();
+    let now = timestamp_to_date();
     let seconds = 86400 - (
       now['hour'] * 3600
       + now['minute'] * 60
