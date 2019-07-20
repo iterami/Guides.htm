@@ -79,7 +79,7 @@ function calculate_material(){
         });
 
         if(numerator !== 0){
-            let reduction = core_fraction_reduce({
+            let reduction = math_fraction_reduce({
               'denominator': denominator,
               'numerator': numerator,
             });
