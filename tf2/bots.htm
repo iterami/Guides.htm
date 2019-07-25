@@ -6,6 +6,17 @@
 
 <a href=../../index.htm>iterami</a>/<a href=../index.htm>Guides.htm</a>/<a href=index.htm>Team Fortress 2</a>/Bots
 <ul>
+  <li>Bot classnames:<ul>
+    <li>demoman
+    <li>engineer
+    <li>heavyweapons
+    <li>medic
+    <li>pyro
+    <li>scout
+    <li>sniper
+    <li>soldier
+    <li>spy
+  </ul>
   <li>Remove round time limit: ent_fire team_round_timer disable
 </ul>
 <table>
@@ -19,18 +30,8 @@
     <td>tf_bot_add 1 engineer blue expert "honzifox"<br>
       Args:<ol>
         <li>Count: number of bots to create.
-        <li>Class: classnames of the created bots:<ul>
-          <li>demoman
-          <li>engineer
-          <li>heavyweapons
-          <li>medic
-          <li>pyro
-          <li>scout
-          <li>sniper
-          <li>soldier
-          <li>spy
-        </ul>
-        <li>Team: team of the created bots::<ul>
+        <li>Class: classnames of the created bots.
+        <li>Team: team of the created bots:<ul>
           <li>blue
           <li>red
         </ul>
@@ -42,6 +43,13 @@
         </ul>
         <li>Name: string in quotes.
       </ol>
+  <tr>
+    <td>tf_bot_force_class
+    <td>0
+    <td><ul>
+      <li>Forces bots to pick the specified class when respawning.
+      <li>If this is not set to a classname, bots will choose classes based on predetermined order.
+    </ul>
   <tr>
     <td>tf_bot_quota
     <td>0
@@ -55,6 +63,6 @@
     <td><ul>
       <li>"fill" creates bots if total server player count drops below tf_bot_quota.
       <li>"match" creates bots until tf_bot_quota bots exist.
-      <li>"normal" is default
+      <li>"normal" is default.
     </ul>
 </table>
