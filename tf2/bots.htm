@@ -49,11 +49,19 @@
     Example: tf_bot_add 1 engineer blue expert "honzifox"
   <tr>
     <td>tf_bot_force_class
-    <td>0
+    <td>""
     <td>
     <td><ul>
       <li>Forces bots to pick the specified class when respawning.
-      <li>If this is not set to a classname, bots will choose classes based on predetermined order.
+      <li>If this is set to an empty string, bots will choose classes based on predetermined order.
+      <li>If this is set to any value other than classname or empty string, an error will occur and the bot will not spawn.
+    </ul>
+  <tr>
+    <td>tf_bot_reevaluate_class_in_spawnroom
+    <td>1
+    <td>0
+    <td><ul>
+      <li>Setting this to 1 may result in bots dying when leaving the spawn area.
     </ul>
   <tr>
     <td>tf_bot_quota
