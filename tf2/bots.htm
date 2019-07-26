@@ -17,35 +17,40 @@
     <li>soldier
     <li>spy
   </ul>
+  <liu><a href=#bot>Bot Commands</a>
   <li>Remove round time limit: ent_fire team_round_timer disable
+  <li><a href=#bot>Server Commands</a>
 </ul>
 <table>
-  <tr class=header>
-    <td>Commands
+  <tr class=header id=bot>
+    <td>Bot Commands
     <td>Default
+    <td>Recommended
     <td>Notes
   <tr>
     <td>tf_bot_add
     <td>
-    <td>tf_bot_add 1 engineer blue expert "honzifox"<br>
-      Args:<ol>
-        <li>Count: number of bots to create.
-        <li>Class: classnames of the created bots.
-        <li>Team: team of the created bots:<ul>
-          <li>blue
-          <li>red
-        </ul>
-        <li>Difficulty: skill of the created bots:<ul>
-          <li>easy
-          <li>expert
-          <li>hard
-          <li>medium
-        </ul>
-        <li>Name: string in quotes.
-      </ol>
+    <td>
+    <td>Args:<ol>
+      <li>Count: number of bots to create.
+      <li>Class: classnames of the created bots.
+      <li>Team: team of the created bots:<ul>
+        <li>blue
+        <li>red
+      </ul>
+      <li>Difficulty: skill of the created bots:<ul>
+        <li>easy
+        <li>expert
+        <li>hard
+        <li>medium
+      </ul>
+      <li>Name: string in quotes.
+    </ol>
+    Example: tf_bot_add 1 engineer blue expert "honzifox"
   <tr>
     <td>tf_bot_force_class
     <td>0
+    <td>
     <td><ul>
       <li>Forces bots to pick the specified class when respawning.
       <li>If this is not set to a classname, bots will choose classes based on predetermined order.
@@ -53,6 +58,7 @@
   <tr>
     <td>tf_bot_quota
     <td>0
+    <td>
     <td><ul>
       <li>Server will attempt to create bots until tf_bot_quota_mode is met.
       <li>Requires open player slots.
@@ -60,9 +66,43 @@
   <tr>
     <td>tf_bot_quota_mode
     <td>normal
+    <td>
     <td><ul>
       <li>"fill" creates bots if total server player count drops below tf_bot_quota.
       <li>"match" creates bots until tf_bot_quota bots exist.
       <li>"normal" is default.
+    </ul>
+  <tr class=header id=server>
+    <td>Server Commands
+    <td>Default
+    <td>Recommended
+    <td>Notes
+  <tr>
+    <td>mp_disable_respawn_times
+    <td>0
+    <td>1
+    <td><ul>
+      <li>Setting this to 1 is useful for allowing more continuous gameplay.
+    </ul>
+  <tr>
+    <td>mp_enableroundwaittime
+    <td>1
+    <td>0
+    <td><ul>
+      <li>Setting this to 0 is useful for allowing more continuous gameplay after rounds end.
+    </ul>
+  <tr>
+    <td>mp_teams_unbalance_limit
+    <td>1
+    <td>0
+    <td><ul>
+      <li>Setting this to 0 is useful for creating situations involving unequal team sizes without autobalance.
+    </ul>
+  <tr>
+    <td>sv_pausable
+    <td>0
+    <td>1
+    <td><ul>
+      <li>Setting this to 1 is useful for inputting additional commands without interrupting current gameplay.
     </ul>
 </table>
