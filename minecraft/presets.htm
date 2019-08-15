@@ -1,21 +1,35 @@
 <!doctype html>
 <meta charset=utf-8>
 <meta content="width=device-width,initial-scale=1" name=viewport>
-<title>Presets</title>
+<title>Superflat Presets</title>
 <link href=../../common/css/writings.css rel=stylesheet>
 
-<a href=../../index.htm>iterami</a>/<a href=../index.htm>Guides.htm</a>/<a href=index.htm>Minecraft</a>/Presets
+<a href=../../index.htm>iterami</a>/<a href=../index.htm>Guides.htm</a>/<a href=index.htm>Minecraft</a>/Superflat Presets
 <table>
   <tr class=header>
-    <td>Presets
-    <td>Type
+    <td>Name
+    <td>Preset
     <td>Notes
   <tr>
-    <td>minecraft:air
-    <td>Superflat
+    <td>Empty
+    <td><textarea>minecraft:air</textarea>
     <td><ul>
-      <li>Entirely empty world.
+      <li>Entirely empty world, so cheats are probably required.
       <li>Use "/setblock 0 100 0 minecraft:bedrock" to create a stable starting point.
       <li>Use "/tp 0 101 0" to return to your bedrock starting point.
+    </ul>
+  <tr>
+    <td>Lava Trap
+    <td><textarea>minecraft:bedrock,2*minecraft:lava,minecraft:sand</textarea>
+    <td><ul>
+      <li>Lava lake hidden under one layer of sand.
+      <li>Structure generation is recommended so you have something to stand on.
+      <li>All the sand falling at once will cause a lot of lag.
+    </ul>
+  <tr>
+    <td>Ocean
+    <td><textarea>minecraft:bedrock,minecraft:sand,111*minecraft:water</textarea>
+    <td><ul>
+      <li>Ocean 111 units deep.
     </ul>
 </table>
