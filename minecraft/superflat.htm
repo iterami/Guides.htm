@@ -5,12 +5,22 @@
 <link href=../../common/css/writings.css rel=stylesheet>
 
 <a href=../../index.htm>iterami</a>/<a href=../index.htm>Guides.htm</a>/<a href=index.htm>Minecraft</a>/Superflat Presets
+<ul>
+  <li><a href=#empty>Empty</a>
+  <li><a href=#entropy>Entropy</a>
+  <li><a href=#forest-dimension>Forest Dimension</a>
+  <li><a href=#glass-dimension>Glass Dimension</a>
+  <li><a href=#lava-trap>Lava Trap</a>
+  <li><a href=#ocean>Ocean</a>
+  <li><a href=#one-of-each>One of Each</a>
+  <li><a href=#slabs>Slabs</a>
+</ul>
 <table>
   <tr class=header>
     <td>Preset
     <td>Code
     <td>Notes
-  <tr>
+  <tr id=empty>
     <td>Empty
     <td><textarea>minecraft:air</textarea>
     <td><ul>
@@ -18,13 +28,13 @@
       <li>Use "/setblock 0 100 0 minecraft:bedrock" to create a stable starting point.
       <li>Use "/tp 0 101 0" to return to your bedrock starting point.
     </ul>
-  <tr>
+  <tr id=entropy>
     <td>Entropy
     <td><textarea>5*minecraft:oak_leaves</textarea>
     <td><ul>
       <li>Slowly decaying world made of oak leaves, causing much lag.
     </ul>
-  <tr>
+  <tr id=forest-dimension>
     <td>Forest Dimension
     <td><textarea>minecraft:bedrock,minecraft:lava,minecraft:stone,minecraft:dirt,minecraft:grass_block,minecraft:jungle_sapling</textarea>
     <td><ul>
@@ -39,13 +49,13 @@
         <li>spruce_sapling
       </ul>
     </ul>
-  <tr>
+  <tr id=glass-dimension>
     <td>Glass Dimension
     <td><textarea>minecraft:bedrock,100*minecraft:glass;minecraft:plains;decoration,dungeon,lake,lava_lake,mineshaft(chance=1),stronghold</textarea>
     <td><ul>
       <li>World of glass that allows you to see structures below ground.
     </ul>
-  <tr>
+  <tr id=lava-trap>
     <td>Lava Trap
     <td><textarea>minecraft:bedrock,2*minecraft:lava,minecraft:sand</textarea>
     <td><ul>
@@ -53,16 +63,22 @@
       <li>Structure generation is recommended so you have something to stand on.
       <li>All the sand falling at once will cause a lot of lag.
     </ul>
-  <tr>
+  <tr id=ocean>
     <td>Ocean
     <td><textarea>minecraft:bedrock,minecraft:sand,111*minecraft:water</textarea>
     <td><ul>
       <li>Ocean 111 units deep.
     </ul>
-  <tr>
+  <tr id=one-of-each>
     <td>One of Each
     <td><textarea>minecraft:bedrock,minecraft:diamond_ore,minecraft:redstone_ore,minecraft:lava,minecraft:iron_ore,minecraft:stone,minecraft:sandstone,minecraft:sand,minecraft:water,minecraft:dirt,minecraft:dark_oak_log,minecraft:oak_log,minecraft:oak_leaves,minecraft:grass_block,minecraft:grass</textarea>
     <td><ul>
       <li>Different block on each layer.
+    </ul>
+  <tr id=slabs>
+    <td>Slabs
+    <td><textarea>minecraft:bedrock,10*minecraft:stone,minecraft:smooth_stone_slab</textarea>
+    <td><ul>
+      <li>Monsters will not spawn on single-slab blocks, so you can more easily design specific monster spawning contraptions.
     </ul>
 </table>
