@@ -1,6 +1,6 @@
 {
   "pack": {
-    "pack_format": 4,
-    "description": "Enter your pack description here."
+    "description": "Enter your pack description here.",
+    "pack_format": 4
   }
 }
