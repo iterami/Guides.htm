@@ -42,7 +42,7 @@ function calculate_ehp(){
           'structure',
         ];
         for(let hp_type in hp_types){
-            let resistance = core_clamp({
+            let resistance = math_clamp({
               'max': 0.99,
               'min': 0,
               'value': Number(document.getElementById(hp_types[hp_type] + '-' + resists[type]).value),
