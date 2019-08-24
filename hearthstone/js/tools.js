@@ -2,6 +2,7 @@
 
 function repo_init(){
     core_repo_init({
+      'root': '../../index.htm',
       'title': 'Guides.htm',
     });
 
