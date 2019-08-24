@@ -43,12 +43,12 @@ function calculate_ehp(){
         ];
         for(let hp_type in hp_types){
             let resistance = math_clamp({
-              'max': 0.99,
+              'max': 99,
               'min': 0,
               'value': Number(document.getElementById(hp_types[hp_type] + '-' + resists[type]).value),
             });
 
-            ehp += hp[hp_types[hp_type]] / (1 - resistance);
+            ehp += hp[hp_types[hp_type]] / (1 - (resistance / 100));
         }
 
         document.getElementById('total-' + resists[type]).innerHTML = core_round({
