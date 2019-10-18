@@ -247,6 +247,7 @@ function repo_init(){
     core_interval_modify({
       'id': 'second',
       'interval': 1000,
+      'sync': true,
       'todo': update_time,
     });
 }
