@@ -75,6 +75,7 @@ function calculate_material(){
         numerator *= denominator;
 
         document.getElementById('material-' + i).innerHTML = core_number_format({
+          'decimals-min': 0,
           'number': Math.ceil(discounted),
         });
 
@@ -99,6 +100,7 @@ function calculate_skillpoints(){
     let rank = Number(document.getElementById('skill-rank').value);
 
     document.getElementById('skill-result').innerHTML = core_number_format({
+      'decimals-min': 0,
       'number': Math.floor(Math.pow(2, 2.5 * (level - 1)) * rank * 250),
     });
 }
@@ -123,9 +125,11 @@ function calculate_year(){
 
     document.getElementById('current-year').value = year;
     document.getElementById('eve-year').innerHTML = core_number_format({
+      'decimals-min': 0,
       'number': year + 21338,
     });
     document.getElementById('yc-year').innerHTML = core_number_format({
+      'decimals-min': 0,
       'number': year - 1898,
     });
 }
@@ -145,6 +149,7 @@ function calculate_war(){
     }
 
     document.getElementById('war-result').innerHTML = core_number_format({
+      'decimals-min': 2,
       'number': cost,
     });
 }

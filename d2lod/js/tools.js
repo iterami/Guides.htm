@@ -44,6 +44,7 @@ function calculate(){
     }
 
     result = core_number_format({
+      'decimals-min': 0,
       'number': result,
     });
 

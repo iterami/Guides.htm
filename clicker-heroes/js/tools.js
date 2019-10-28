@@ -2,6 +2,7 @@
 
 function calculate_immortal_damage(){
     document.getElementById('output').innerHTML = core_number_format({
+      'decimals-min': 0,
       'number': Number.parseFloat(document.getElementById('dps').value)
         * Number.parseFloat(document.getElementById('cps').value)
         * 32,
