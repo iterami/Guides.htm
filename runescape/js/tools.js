@@ -26,7 +26,7 @@ function calculate_combat(){
     }
 
     // Calculate combat level using the 138 formula.
-    document.getElementById('result-138').innerHTML =
+    document.getElementById('result-138').textContent =
       Math.floor((
         1.3 * Math.max(
           (skills['attack'] + skills['strength']),
@@ -40,7 +40,7 @@ function calculate_combat(){
       ) / 4);
 
     // Calculate combat level using the 200 formula.
-    document.getElementById('result-200').innerHTML =
+    document.getElementById('result-200').textContent =
       Math.max(
         skills['attack'],
         skills['magic'],
@@ -62,7 +62,7 @@ function calculate_xp(){
     );
 
     if(first >= second){
-        document.getElementById('result').innerHTML = 'First level must be lower than the second level.';
+        document.getElementById('result').textContent = 'First level must be lower than the second level.';
         return;
     }
 
@@ -190,8 +190,8 @@ function calculate_xp(){
       200000000,
     ];
 
-    document.getElementById('first-xp').innerHTML = xp[first - 1];
-    document.getElementById('second-xp').innerHTML = xp[second - 1];
+    document.getElementById('first-xp').textContent = xp[first - 1];
+    document.getElementById('second-xp').textContent = xp[second - 1];
 
     document.getElementById('result').innerHTML =
       'Min ('

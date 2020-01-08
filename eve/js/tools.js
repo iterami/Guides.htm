@@ -4,7 +4,7 @@ function calculate_alignment(){
     let inertia = Number(document.getElementById('alignment-inertia').value);
     let mass = Number(document.getElementById('alignment-mass').value);
 
-    document.getElementById('alignment-result').innerHTML = core_number_format({
+    document.getElementById('alignment-result').textContent = core_number_format({
       'number': (Math.log(2) * inertia * mass) / 500000,
     });
 }
@@ -13,7 +13,7 @@ function calculate_efficiency(){
     let lost = Number(document.getElementById('efficiency-lost').value);
     let total = lost + Number(document.getElementById('efficiency-destroyed').value);
 
-    document.getElementById('efficiency-result').innerHTML = (1 - (lost  / total)) * 100;
+    document.getElementById('efficiency-result').textContent = (1 - (lost  / total)) * 100;
 }
 
 function calculate_ehp(){
@@ -23,7 +23,7 @@ function calculate_ehp(){
       'structure': Number(document.getElementById('structure-hp').value),
     };
 
-    document.getElementById('total-hp').innerHTML = core_number_format({
+    document.getElementById('total-hp').textContent = core_number_format({
       'number': hp['armor'] + hp['shield'] + hp['structure'],
     });
 
@@ -51,7 +51,7 @@ function calculate_ehp(){
             ehp += hp[hp_types[hp_type]] / (1 - (resistance / 100));
         }
 
-        document.getElementById('total-' + resists[type]).innerHTML = core_round({
+        document.getElementById('total-' + resists[type]).textContent = core_round({
           'number': ehp,
         });
     }
@@ -74,7 +74,7 @@ function calculate_material(){
 
         numerator *= denominator;
 
-        document.getElementById('material-' + i).innerHTML = core_number_format({
+        document.getElementById('material-' + i).textContent = core_number_format({
           'decimals-min': 0,
           'number': Math.ceil(discounted),
         });
@@ -91,7 +91,7 @@ function calculate_material(){
             denominator = 1;
         }
 
-        document.getElementById('runs-' + i).innerHTML = denominator;
+        document.getElementById('runs-' + i).textContent = denominator;
     }
 }
 
@@ -99,7 +99,7 @@ function calculate_skillpoints(){
     let level = Number(document.getElementById('skill-level').value);
     let rank = Number(document.getElementById('skill-rank').value);
 
-    document.getElementById('skill-result').innerHTML = core_number_format({
+    document.getElementById('skill-result').textContent = core_number_format({
       'decimals-min': 0,
       'number': Math.floor(Math.pow(2, 2.5 * (level - 1)) * rank * 250),
     });
@@ -109,7 +109,7 @@ function calculate_target(){
     let scan = Number(document.getElementById('target-scan').value);
     let sig = Number(document.getElementById('target-sig').value);
 
-    document.getElementById('target-result').innerHTML = core_number_format({
+    document.getElementById('target-result').textContent = core_number_format({
       'number': (40000 / scan ) / Math.pow(Math.asinh(sig), 2),
     });
 }
@@ -124,11 +124,11 @@ function calculate_year(){
     }
 
     document.getElementById('current-year').value = year;
-    document.getElementById('eve-year').innerHTML = core_number_format({
+    document.getElementById('eve-year').textContent = core_number_format({
       'decimals-min': 0,
       'number': year + 21338,
     });
-    document.getElementById('yc-year').innerHTML = core_number_format({
+    document.getElementById('yc-year').textContent = core_number_format({
       'decimals-min': 0,
       'number': year - 1898,
     });
@@ -148,7 +148,7 @@ function calculate_war(){
         cost = 50000000;
     }
 
-    document.getElementById('war-result').innerHTML = core_number_format({
+    document.getElementById('war-result').textContent = core_number_format({
       'decimals-min': 2,
       'number': cost,
     });

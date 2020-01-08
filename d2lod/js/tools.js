@@ -11,7 +11,7 @@ function calculate(){
     );
 
     if(first > second){
-        document.getElementById('result').innerHTML = 'Runes cannot be downgraded.';
+        document.getElementById('result').textContent = 'Runes cannot be downgraded.';
         return;
     }
 

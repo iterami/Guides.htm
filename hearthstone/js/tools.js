@@ -32,7 +32,7 @@ function update_time(){
         }
 
         let seconds = regions[region] - week_seconds;
-        document.getElementById(region).innerHTML =
+        document.getElementById(region).textContent =
           Number.parseInt(seconds / 86400, 10) % 7 + 'd '
           + core_digits_min({
             'number': Number.parseInt(seconds / 3600, 10) % 24,
