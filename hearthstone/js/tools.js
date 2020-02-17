@@ -15,7 +15,7 @@ function repo_init(){
 }
 
 function update_time(){
-    let regions = {
+    const regions = {
       'a-end': 313200,
       'a-start': 316800,
       'ac-end': 327600,
@@ -23,15 +23,15 @@ function update_time(){
       'e-end': 327600,
       'e-start': 331200,
     };
-    let date = timestamp_to_date();
-    let week_seconds = date['day'] * 86400 + date['hour'] * 3600 + date['minute'] * 60 + date['second'];
+    const date = timestamp_to_date();
+    const week_seconds = date['day'] * 86400 + date['hour'] * 3600 + date['minute'] * 60 + date['second'];
 
-    for(let region in regions){
+    for(const region in regions){
         if(week_seconds > regions[region]){
             regions[region] += 604800;
         }
 
-        let seconds = regions[region] - week_seconds;
+        const seconds = regions[region] - week_seconds;
         document.getElementById(region).textContent =
           Number.parseInt(seconds / 86400, 10) % 7 + 'd '
           + core_digits_min({

@@ -2,7 +2,7 @@
 
 function calculate_combat(){
     // Verify skills and store their values.
-    let skills = {
+    const skills = {
       'attack': 1,
       'constitution': 10,
       'defense': 1,
@@ -12,8 +12,8 @@ function calculate_combat(){
       'strength': 1,
       'summoning': 1,
     };
-    for(let id in skills){
-        let value = document.getElementById(id).value;
+    for(const id in skills){
+        const value = document.getElementById(id).value;
 
         if(!Number.isNaN(value)
           && value.length >= 1
@@ -52,11 +52,11 @@ function calculate_combat(){
 }
 
 function calculate_xp(){
-    let first = Number.parseInt(
+    const first = Number.parseInt(
       document.getElementById('first').value,
       10
     );
-    let second = Number.parseInt(
+    const second = Number.parseInt(
       document.getElementById('second').value,
       10
     );
@@ -66,7 +66,7 @@ function calculate_xp(){
         return;
     }
 
-    let xp = [
+    const xp = [
       0,
       83,
       174,
@@ -211,7 +211,7 @@ function repo_init(){
       'title': 'Guides.htm',
     });
 
-    let ids = [
+    const ids = [
       'attack',
       'constitution',
       'defense',
@@ -221,7 +221,7 @@ function repo_init(){
       'strength',
       'summoning',
     ];
-    for(let id in ids){
+    for(const id in ids){
         document.getElementById(ids[id]).oninput = calculate_combat;
     }
 
@@ -253,15 +253,15 @@ function repo_init(){
 }
 
 function update_time(){
-    let now = timestamp_to_date();
+    const now = timestamp_to_date();
     let seconds = 86400 - (
       now['hour'] * 3600
       + now['minute'] * 60
       + now['second']
     );
 
-    let hours = Number.parseInt(seconds / 3600, 10) % 24;
-    let minutes = Number.parseInt(seconds / 60, 10) % 60;
+    const hours = Number.parseInt(seconds / 3600, 10) % 24;
+    const minutes = Number.parseInt(seconds / 60, 10) % 60;
     seconds = seconds % 60;
 
     document.getElementById('time').innerHTML = core_digits_min({

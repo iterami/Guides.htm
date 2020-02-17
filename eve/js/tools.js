@@ -1,8 +1,8 @@
 'use strict';
 
 function calculate_alignment(){
-    let inertia = Number(document.getElementById('alignment-inertia').value);
-    let mass = Number(document.getElementById('alignment-mass').value);
+    const inertia = Number(document.getElementById('alignment-inertia').value);
+    const mass = Number(document.getElementById('alignment-mass').value);
 
     document.getElementById('alignment-result').textContent = core_number_format({
       'number': (Math.log(2) * inertia * mass) / 500000,
@@ -10,14 +10,14 @@ function calculate_alignment(){
 }
 
 function calculate_efficiency(){
-    let lost = Number(document.getElementById('efficiency-lost').value);
-    let total = lost + Number(document.getElementById('efficiency-destroyed').value);
+    const lost = Number(document.getElementById('efficiency-lost').value);
+    const total = lost + Number(document.getElementById('efficiency-destroyed').value);
 
     document.getElementById('efficiency-result').textContent = (1 - (lost  / total)) * 100;
 }
 
 function calculate_ehp(){
-    let hp = {
+    const hp = {
       'armor': Number(document.getElementById('armor-hp').value),
       'shield': Number(document.getElementById('shield-hp').value),
       'structure': Number(document.getElementById('structure-hp').value),
@@ -27,22 +27,22 @@ function calculate_ehp(){
       'number': hp['armor'] + hp['shield'] + hp['structure'],
     });
 
-    let resists = [
+    const resists = [
       'em',
       'explosive',
       'kinetic',
       'thermal',
     ];
-    for(let type in resists){
+    for(const type in resists){
         let ehp = 0;
 
-        let hp_types = [
+        const hp_types = [
           'armor',
           'shield',
           'structure',
         ];
-        for(let hp_type in hp_types){
-            let resistance = math_clamp({
+        for(const hp_type in hp_types){
+            const resistance = math_clamp({
               'max': 99,
               'min': 0,
               'value': Number(document.getElementById(hp_types[hp_type] + '-' + resists[type]).value),
@@ -58,16 +58,16 @@ function calculate_ehp(){
 }
 
 function calculate_material(){
-    let base = Number(document.getElementById('material-input').value);
+    const base = Number(document.getElementById('material-input').value);
 
     for(let i = 1; i < 11; i++){
-        let discounted = core_round({
+        const discounted = core_round({
           'number': base * ((100 - i) / 100),
         });
-        let numerator = core_round({
+        const numerator = core_round({
           'number': discounted % 1,
         });
-        let denominator = Math.pow(
+        const denominator = Math.pow(
           10,
           String(numerator).length - 2
         );
@@ -80,7 +80,7 @@ function calculate_material(){
         });
 
         if(numerator !== 0){
-            let reduction = math_fraction_reduce({
+            const reduction = math_fraction_reduce({
               'denominator': denominator,
               'numerator': numerator,
             });
@@ -96,8 +96,8 @@ function calculate_material(){
 }
 
 function calculate_skillpoints(){
-    let level = Number(document.getElementById('skill-level').value);
-    let rank = Number(document.getElementById('skill-rank').value);
+    const level = Number(document.getElementById('skill-level').value);
+    const rank = Number(document.getElementById('skill-rank').value);
 
     document.getElementById('skill-result').textContent = core_number_format({
       'decimals-min': 0,
@@ -106,8 +106,8 @@ function calculate_skillpoints(){
 }
 
 function calculate_target(){
-    let scan = Number(document.getElementById('target-scan').value);
-    let sig = Number(document.getElementById('target-sig').value);
+    const scan = Number(document.getElementById('target-scan').value);
+    const sig = Number(document.getElementById('target-sig').value);
 
     document.getElementById('target-result').textContent = core_number_format({
       'number': (40000 / scan ) / Math.pow(Math.asinh(sig), 2),
@@ -135,7 +135,7 @@ function calculate_year(){
 }
 
 function calculate_war(){
-    let members = Number(document.getElementById('war-members').value);
+    const members = Number(document.getElementById('war-members').value);
 
     let cost = Math.pow(
       (Math.log(members) / Math.log(1.675)),
