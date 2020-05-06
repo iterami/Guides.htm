@@ -64,10 +64,10 @@ function calculate_material(){
         const discounted = core_round({
           'number': base * ((100 - i) / 100),
         });
-        const numerator = core_round({
+        let numerator = core_round({
           'number': discounted % 1,
         });
-        const denominator = Math.pow(
+        let denominator = Math.pow(
           10,
           String(numerator).length - 2
         );
