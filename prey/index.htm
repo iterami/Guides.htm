@@ -9,26 +9,31 @@
 Prey (2006):
 <ul>
   <li>Open the console with "Ctrl + Alt + ~".
-  <li>If you want to continue using commands, you must enter them after each load.
+  <li>Some commands can be set to your "preyconfig.cfg" file to remain set to a specific value, but others must be entered after each load.
 </ul>
 <table>
   <tr class=header>
     <td>Useful Commands
+    <td>preyconfig.cfg
     <td>Notes
   <tr>
     <td>clear
+    <td>
     <td>Clears the console.
   <tr>
     <td>com_showfps x
+    <td>seta com_showFPS "0"
     <td>Sets the display state of the current frames per second:<ul>
       <li>x=0: don't display fps.
       <li>x=1: display fps.
     </ul>
   <tr>
     <td>exit
+    <td>
     <td>Exits the entire game.
   <tr>
     <td>give x
+    <td>
     <td>Gives you something:<ul>
       <li>x=all: Gives you every weapon available and refills your health and ammo. Some portions of the game may behave strangely because they assume you do not have specific weapons.
       <li>x=ammo: refills your ammo.
@@ -36,45 +41,58 @@ Prey (2006):
     </ul>
   <tr>
     <td>god
+    <td>
     <td>Makes you immune to all forms of damage.
   <tr>
     <td>kill
+    <td>
     <td>Kills yourself.
   <tr>
     <td>noclip
+    <td>
     <td>Makes your character fly and pass through all solid objects. Some portions of the game may behave strangely if you pass through triggers in a different order.
   <tr>
     <td>notarget
+    <td>
     <td>Makes you invisible to enemies.
   <tr>
     <td>pm_crouchspeed x
+    <td>
     <td>Sets your crouching speed to x. Default is 80.
   <tr>
     <td>pm_jumpheight x
+    <td>
     <td>Sets your jump height to x. Default is 64.
   <tr>
     <td>pm_runspeed x
+    <td>
     <td>Sets your running speed to x. Default is 220.
   <tr>
     <td>pm_thirdperson x
+    <td>
     <td>Sets third person state:<ul>
       <li>x=0: first person state.
       <li>x=1: third person state.
     </ul>
   <tr>
     <td>pm_walkspeed x
+    <td>
     <td>Sets your walking speed to x. Default is 180.
   <tr>
     <td>r_brightness x
+    <td>
     <td>Sets the brightness to x. Default is 1.
   <tr>
     <td>r_gamma x
+    <td>seta r_gamma "1"
     <td>Sets the gamma to x. Default is 1.
   <tr>
     <td>setplayergravity x y z
+    <td>
     <td>Changes the gravity experienced by the player on each axis.
   <tr>
     <td>spawn x
+    <td>
     <td>Spawns something:<ul>
       <li>x=monster_centurion: doesn't work in the demo.
       <li>x=monster_fodder
