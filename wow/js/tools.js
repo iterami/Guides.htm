@@ -9,6 +9,9 @@ function calculate_health(){
     document.getElementById('health-bloodthirst-fresh-meat').textContent = core_round({
       'number': health * (6 / 100),
     });
+    document.getElementById('health-execute').textContent = core_round({
+      'number': health * (20 / 100),
+    });
     document.getElementById('health-healthstone').textContent = core_round({
       'number': health * (25 / 100),
     });
