@@ -12,6 +12,9 @@ function calculate_health(){
     document.getElementById('health-execute').textContent = core_round({
       'number': health * (20 / 100),
     });
+    document.getElementById('health-gift-of-the-naaru').textContent = core_round({
+      'number': health * (20 / 100),
+    });
     document.getElementById('health-healthstone').textContent = core_round({
       'number': health * (25 / 100),
     });
