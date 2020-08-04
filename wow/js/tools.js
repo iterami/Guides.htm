@@ -3,24 +3,21 @@
 function calculate_health(){
     const health = Number(document.getElementById('health-max').value) || 1;
 
-    document.getElementById('health-bloodthirst').textContent = core_round({
-      'number': health * (5 / 100),
-    });
-    document.getElementById('health-bloodthirst-fresh-meat').textContent = core_round({
-      'number': health * (6 / 100),
-    });
-    document.getElementById('health-execute').textContent = core_round({
-      'number': health * (20 / 100),
-    });
-    document.getElementById('health-gift-of-the-naaru').textContent = core_round({
-      'number': health * (20 / 100),
-    });
-    document.getElementById('health-healthstone').textContent = core_round({
-      'number': health * (25 / 100),
-    });
-    document.getElementById('health-victory-rush').textContent = core_round({
-      'number': health * (20 / 100),
-    });
+    const abilities = {
+      'bloodthirst': 5,
+      'bloodthirst-fresh-meat': 6,
+      'crimson-vial': 30,
+      'execute': 20,
+      'gift-of-the-naaru': 20,
+      'healthstone': 25,
+      'victory-rush': 20,
+    };
+
+    for(const ability in abilities){
+        document.getElementById('health-' + ability).textContent = core_round({
+          'number': health * (abilities[ability] / 100),
+        });
+    }
 }
 
 function repo_init(){
