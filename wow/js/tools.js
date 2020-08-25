@@ -11,6 +11,7 @@ function calculate_percentage(){
       'execute': 20,
       'gift-of-the-naaru': 20,
       'healthstone': 25,
+      'resurrect': 35,
       'swift-hand-of-justice': 2,
       'victory-rush': 20,
     };
