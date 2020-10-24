@@ -3,22 +3,21 @@
 function calculate_percentage(){
     const max = Number(document.getElementById('max').value) || 1;
 
-    const abilities = {
-      'bloodthirst': 5,
-      'bloodthirst-fresh-meat': 6,
-      'crimson-vial': 30,
-      'discerning-eye-of-the-beast': 2,
-      'execute': 20,
-      'gift-of-the-naaru': 20,
-      'healthstone': 25,
-      'resurrect': 35,
-      'swift-hand-of-justice': 2,
-      'victory-rush': 20,
-    };
+    const percents = [
+      2,
+      5,
+      6,
+      10,
+      20,
+      25,
+      30,
+      35,
+      50,
+    ];
 
-    for(const ability in abilities){
-        document.getElementById(ability).textContent = core_round({
-          'number': max * (abilities[ability] / 100),
+    for(const percent in percents){
+        document.getElementById(percents[percent]).textContent = core_round({
+          'number': max * (percents[percent] / 100),
         });
     }
 }
