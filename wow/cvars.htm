@@ -44,6 +44,22 @@
       <li>If set to 0, player names all have the same color.
     </ul>
   <tr>
+    <td>enablefloatingcombattext
+    <td>0
+    <td>1
+    <td><ul>
+      <li>If set to 1, floating text will be displayed near the center of your screen when your character's state or stats change. Additional CVars are available to customize which changes should be displayed.
+      <li>If set to 0, no changes to your character will be displayed as text floating near the center of your screen.
+    </ul>
+  <tr>
+    <td>miniworldmap
+    <td>1
+    <td>1
+    <td><ul>
+      <li>If set to 1, your world map is displayed in a regular-sized UI window, allowing you to retain visibility and full character control.
+      <li>If set to 0, your world map takes up the entire screen and obscures your vision. You can have keyboard control of your character, but not mouse control.
+    </ul>
+  <tr>
     <td>missingtransmogsourceinitemtooltips
     <td>0
     <td>1
@@ -58,6 +74,24 @@
     <td><ul>
       <li>If set to 1, displays all buffs and debuffs on your target, which can help you make better decisions during combat.
       <li>If set to 0, only your own buffs and debuffs will be displayed.
+    </ul>
+  <tr>
+    <td>statustext
+    <td>0
+    <td>1
+    <td><ul>
+      <li>If set to 1, health and resource bars will display text values instead of only being a solid-color bar. This gives you better information regarding remaining and total value. Specific display text is hanlded by the "statustextdisplay" CVar.
+      <li>If set to 0, health and resource bars will not display any text values.
+    </ul>
+  <tr>
+    <td>statustextdisplay
+    <td>"NONE"
+    <td>"NUMERIC"
+    <td><ul>
+      <li>If set to "BOTH", health and resource bars will display a percentage between 0% and 100% on the left and remaining value on the right. No maximum is displayed.
+      <li>If set to "NONE", health and resource bars will not display any text values.
+      <li>If set to "NUMERIC", health and resource bars will display "remaining / total". No percentage is displayed.
+      <li>If set to "PERCENT", health and resource bars will display a percentage between 0% and 100%. No numbers indicating remaining or total are displayed.
     </ul>
   <tr>
     <td>xpbartext
