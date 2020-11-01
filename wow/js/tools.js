@@ -5,6 +5,7 @@ function calculate_percentage(){
 
     const percents = [
       2,
+      3,
       4,
       5,
       7,
