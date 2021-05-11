@@ -58,12 +58,17 @@ function calculate(){
 
 function repo_init(){
     core_repo_init({
+      'events': {
+        'first': {
+          'onchange': calculate,
+        },
+        'second': {
+          'onchange': calculate,
+        },
+      },
       'root': '../../index.htm',
       'title': 'Guides.htm',
     });
-
-    document.getElementById('first').onchange = calculate;
-    document.getElementById('second').onchange = calculate;
 
     calculate();
 }
